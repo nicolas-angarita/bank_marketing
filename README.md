@@ -1,1 +1,106 @@
-# bank_marketing
+# Bank Marketing Campaign Response Classification
+
+# Project Goals
+
+ - Predict which clients are to suscribe to a term deposit
+ - Identify key drivers of subscription 
+
+# Project Description
+
+A Portuguese banking institution would like to know if a client is likely to subscribe to a term deposit based on their marketing campaigns. Term deposits are a major source of income for a bank. A term deposit is a cash investment held at a financial institution. Your money is invested for an agreed rate of interest over a fixed amount of time, or term. The bank has various outreach plans to sell term deposits to their customers such as email marketing, advertisements, telephonic marketing, and digital marketing.
+
+Telephonic marketing campaigns are one of the most effective ways to reach out to people. However, they require huge investment as large call centers are hired to actually execute these campaigns. It is crucial to identify the customers most likely to convert beforehand so that they can be specifically targeted via call.
+
+# Initial Questions
+
+ 1. Do customers with partners or dependents churn more than those with no dependents or partner?
+ 2. Does the type of contract a customer have make it more likley to churn?
+ 3. Are customers with different internet service more or less likely to churn?
+ 4. Are Senior Citizens more or less likely to churn than non Senior Citizen?
+
+# The Plan
+
+ - Create README with project goals, project description, initial hypotheses, planning of project, data dictionary, and come up with recommedations/takeaways
+
+### Acquire Data
+ - Acquire data from Kaggle and create a function to later import the data into a juptyer notebook. (acquire.py)
+
+### Prepare Data
+ - Clean and prepare the data creating a function that will give me data that is ready to be explored upon. Within this step we will also write a function to split our data into train, validate, and test. (prepare.py) 
+ 
+### Explore Data
+ - Create at least two hypotheses, set an alpha, run the statistical tests needed, reject or fail to reject the Null Hypothesis, document any findings and takeaways that are observed.
+ 
+### Model Data 
+ - Establish a baseline accuracyusing Logoistic Regression 
+ 
+ - Create and train at least four classification models
+ 
+ - Evaluate models on train and validate datasets
+ 
+ - Evaluate which model performs the best and on that model use the test data subset.
+ 
+### Delivery  
+ - Create CSV file with the clients that are most likely to subscribe to a term deposit.
+ 
+ - Create a Final Report Notebook to document conclusions, takeaways, and next steps in recommadations for clients to suscribe. Also, inlcude visualizations to help explain why the model that was selected is the best to better help the viewer understand. 
+
+
+## Data Dictionary
+
+
+| Target Variable |     Definition     |
+| --------------- | ------------------ |
+|      subscribed      | yes(1) or no(0) |
+
+| Feature  | Definition |
+| ------------- | ------------- |
+| age  | age for each client (numeric)  |
+| job | "admin.","unknown","unemployed","management","housemaid","entrepreneur","student", "blue-collar","self-employed","retired","technician","services" (categorical) |
+| marital | marital status (categorical: "married","divorced","single"; note: "divorced" means divorced or widowed) |
+| education | (categorical: "unknown","secondary","primary","tertiary") |
+| default | yhas credit in default? (binary: "yes","no")  |
+| balance | average yearly balance, in euros (numeric) | 
+| housing| has housing loan? (binary: "yes","no") |
+| loan | has personal loan?(binary: yes or no) |
+| contact |  # related with the last contact of the current campaign:  contact communication type (categorical: "unknown","telephone","cellular") |
+| day | last contact day of the month (numeric) |
+| month | last contact month of year (categorical: "jan", "feb", "mar", …, "nov", "dec") |
+| duration | last contact duration, in seconds (numeric) # other attributes |
+| campaign | number of contacts performed during this campaign and for this client (numeric, includes last contact) |
+| pdays | number of days that passed by after the client was last contacted from a previous campaign (numeric, -1 means client was not previously contacted) |
+| previous | number of contacts performed before this campaign and for this client (numeric) |
+| poutcome | outcome of the previous marketing campaign (categorical: "unknown","other","failure","success") |
+
+## Steps to Reproduce
+
+ - You will need an env.py file that contains the hostname, username and password of mySQL database that contains the telco dataset. Store that env.py file locally in the repository.
+
+- Clone my repo including the acquire.py, prepare.py, and explore.py (make sure to create a .gitignore to hide your env.py file since it will have your credentials to access the data)
+
+- Put the data in a file containing the cloned repo.
+
+- Run notebook.
+
+## Takeaways and Conclusions
+
+ - Customers who have dependents or partners churned at a much lower rate those those who did not
+  
+ - The longer the contract a customer had the less likely they were to churn. With month-to-month having the most churned customers.
+ 
+ - Customers who have fiber optic internet are more likely to churn compared to other internet customers
+ 
+ - Non Senior citizens are more likely to churn than senior citizens.
+ 
+**Best Model's performance:<br>
+Accuracy of 85.72% on in-sample (train), 85.59% on out-of-sample data (validate) and an accuracy of 86% on the test data.**
+
+## Recommendations
+- We would want to target those who have dependents or partners to be within our target market. Seeing that customers that have dependents or a partner churn at a lower rate.
+
+- I would recommend promoting longer contracts for our customers, making them more appealing to customers.
+
+## Next Steps
+
+- Figure out why month to month and fiber optic customers are churning at such a high rate.
+- Consider adding different hyperparameters to models for better results. 
