@@ -13,10 +13,10 @@ Telephonic marketing campaigns are one of the most effective ways to reach out t
 
 # Initial Questions
 
- 1. Do customers with partners or dependents churn more than those with no dependents or partner?
- 2. Does the type of contract a customer have make it more likley to churn?
- 3. Are customers with different internet service more or less likely to churn?
- 4. Are Senior Citizens more or less likely to churn than non Senior Citizen?
+ 1. Does the type of job have a relationship if a client will subscribe to a term deposit?
+ 2. Does the type of education a client have make it more likely to subscribe?
+ 3. Are clients older than average age more likely to subscribe? 
+ 4. Does the duration of contact have a relationship with subscription to a term deposit?
 
 # The Plan
 
@@ -56,27 +56,27 @@ Telephonic marketing campaigns are one of the most effective ways to reach out t
 | Feature  | Definition |
 | ------------- | ------------- |
 | age  | age for each client (numeric)  |
-| job | "admin.","unknown","unemployed","management","housemaid","entrepreneur","student", "blue-collar","self-employed","retired","technician","services" (categorical) |
-| marital | marital status (categorical: "married","divorced","single"; note: "divorced" means divorced or widowed) |
-| education | (categorical: "unknown","secondary","primary","tertiary") |
-| default | yhas credit in default? (binary: "yes","no")  |
+| job | admin,unknown,unemployed,management,housemaid,entrepreneur,student, blue-collar,self-employed,retired,technician,services (categorical) |
+| marital | married,divorced,single; note: "divorced" means divorced or widowed) (categorical) |
+| education | unknown,secondary,primary,tertiary(categorical) |
+| default | has credit in default? (binary: yes,no)  |
 | balance | average yearly balance, in euros (numeric) | 
-| housing| has housing loan? (binary: "yes","no") |
+| housing | has housing loan? (binary: yes or no) |
 | loan | has personal loan?(binary: yes or no) |
-| contact |  # related with the last contact of the current campaign:  contact communication type (categorical: "unknown","telephone","cellular") |
+| contact | related with the last contact of the current campaign:  contact communication type unknown,telephone,cellular (categorical) |
 | day | last contact day of the month (numeric) |
-| month | last contact month of year (categorical: "jan", "feb", "mar", …, "nov", "dec") |
-| duration | last contact duration, in seconds (numeric) # other attributes |
+| month | last contact month of year (categorical) |
+| duration | last contact duration, in seconds (numeric) |
 | campaign | number of contacts performed during this campaign and for this client (numeric, includes last contact) |
 | pdays | number of days that passed by after the client was last contacted from a previous campaign (numeric, -1 means client was not previously contacted) |
 | previous | number of contacts performed before this campaign and for this client (numeric) |
-| poutcome | outcome of the previous marketing campaign (categorical: "unknown","other","failure","success") |
+| poutcome | outcome of the previous marketing campaign unknown,other,failure,success (categorical) |
 
 ## Steps to Reproduce
 
- - You will need an env.py file that contains the hostname, username and password of mySQL database that contains the telco dataset. Store that env.py file locally in the repository.
+ - You will need both csv files from kaggle 
 
-- Clone my repo including the acquire.py, prepare.py, and explore.py (make sure to create a .gitignore to hide your env.py file since it will have your credentials to access the data)
+- Clone my repo including the acquire.py, prepare.py, and explore.py
 
 - Put the data in a file containing the cloned repo.
 
