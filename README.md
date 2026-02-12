@@ -82,25 +82,34 @@ Telephonic marketing campaigns are one of the most effective ways to reach out t
 
 - Run notebook.
 
-## Takeaways and Conclusions
+## Conclusion
 
- - Customers who have dependents or partners churned at a much lower rate those those who did not
-  
- - The longer the contract a customer had the less likely they were to churn. With month-to-month having the most churned customers.
- 
- - Customers who have fiber optic internet are more likely to churn compared to other internet customers
- 
- - Non Senior citizens are more likely to churn than senior citizens.
- 
-**Best Model's performance:<br>
-Accuracy of 85.72% on in-sample (train), 85.59% on out-of-sample data (validate) and an accuracy of 86% on the test data.**
+- Approximately 13% of contacted clients subscribe to term deposits, indicating a highly imbalanced dataset.
 
-## Recommendations
-- We would want to target those who have dependents or partners to be within our target market. Seeing that customers that have dependents or a partner churn at a lower rate.
+-  Students and retired clients show higher subscription rates relative to other occupational groups.
 
-- I would recommend promoting longer contracts for our customers, making them more appealing to customers.
+- Age is a meaningful predictor; when grouped into lifecycle segments, younger adults and clients aged 65+ demonstrate higher likelihood of subscription.
 
-## Next Steps
+- Call duration strongly correlates with subscription probability, but was excluded from modeling due to data leakage (recorded post-contact).
 
-- Figure out why month to month and fiber optic customers are churning at such a high rate.
-- Consider adding different hyperparameters to models for better results. 
+## Best Model's performance:
+
+- A Random Forest model (max_depth = 9) achieved:
+        73.33% precision on the test set 
+    Compared to a baseline conversion rate of ~13%
+
+- This represents a 5.6x lift in targeting efficiency, significantly reducing wasted telemarketing calls.
+
+## Recommendations:
+
+- Deploy the model to prioritize high-probability customers in telemarketing campaigns.
+
+- Adjust classification thresholds depending on campaign budget and desired call volume.
+
+- Monitor model precision over time to ensure consistent targeting efficiency.
+
+## Next Steps:
+
+- Perform threshold optimization to maximize expected profit based on cost per call and revenue per subscription.
+
+- Evaluate alternative models (e.g., Gradient Boosting, XGBoost) for potential precision gains.
