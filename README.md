@@ -2,8 +2,8 @@
 
 # Project Goals
 
- - Predict which clients are to suscribe to a term deposit
- - Identify key drivers of subscription 
+1. Develop a predictive model to identify customers most likely to subscribe to a term deposit in order to optimize telemarketing campaign efficiency.
+2. Identify the key factors influencing customer subscription behavior to inform marketing strategy and targeting decisions.
 
 # Project Description
 
